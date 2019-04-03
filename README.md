@@ -1,4 +1,4 @@
-JavaScript App that does cool things with URLs
+Meteor/JavaScript App that does cool things with URLs
 
 ### Completed Features
 - Sign-in and sign-up forms
