@@ -7,7 +7,8 @@ export default class LinksListItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      justCopied: false
+      justCopied: false,
+      googleUrl: "https://domains.google.com/m/registrar/search?searchTerm=" + this.props.url
     };
   }
   componentDidMount() {
@@ -83,6 +84,11 @@ export default class LinksListItem extends React.Component {
         >
           Delete
         </button>
+        <a
+          className="button button--pill button--link" 
+          target="_blank"
+          href={this.state.googleUrl}
+          >Register</a>
       </div>
     );
   }
