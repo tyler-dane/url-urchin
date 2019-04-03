@@ -51,13 +51,21 @@ export default class LinksListItem extends React.Component {
         {this.renderStats()}
         <a
           className="button button--pill button--link"
+          title="Open URL in new tab"
           href={this.props.shortUrl}
           target="_blank"
         >
           Visit
         </a>
+        <a
+          className="button button--pill button--link" 
+          title="Check if URL is available in new tab"
+          target="_blank"
+          href={this.state.googleUrl}
+          >Register</a>
         <button
           className="button button--pill"
+          title="Copies URL to clipboard"
           ref="copy"
           data-clipboard-text={this.props.shortUrl}
         >
@@ -65,6 +73,7 @@ export default class LinksListItem extends React.Component {
         </button>
         <button
           className="button button--pill"
+          title="Hide URL. Click 'Show hidden links' to reveal"
           onClick={() => {
             Meteor.call(
               "links.setVisibility",
@@ -77,6 +86,7 @@ export default class LinksListItem extends React.Component {
         </button>
         <button
           className="button button--pill"
+          title="Remove URL from list"
           onClick={() => {
             console.log("deleting url");
             Meteor.call("links.deleteOne", this.props._id);
@@ -84,11 +94,6 @@ export default class LinksListItem extends React.Component {
         >
           Delete
         </button>
-        <a
-          className="button button--pill button--link" 
-          target="_blank"
-          href={this.state.googleUrl}
-          >Register</a>
       </div>
     );
   }

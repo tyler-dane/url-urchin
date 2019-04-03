@@ -40,6 +40,7 @@ export default class AddLink extends React.Component {
       <div>
         <button
           className="button"
+          title="Add URL to list"
           onClick={() => this.setState({ isOpen: true })}
         >
           Add Link
