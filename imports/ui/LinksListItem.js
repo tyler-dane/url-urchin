@@ -37,7 +37,7 @@ export default class LinksListItem extends React.Component {
 
     return (
       <p className="item__message">
-        {this.props.visitedCount} {visitMessage} {visitedMessage} 
+        {this.props.visitedCount} {visitMessage} {visitedMessage}
       </p>
     );
   }
@@ -73,6 +73,15 @@ export default class LinksListItem extends React.Component {
           }}
         >
           {this.props.visible ? "Hide" : "Unhide"}
+        </button>
+        <button
+          className="button button--pill"
+          onClick={() => {
+            console.log("deleting url");
+            Meteor.call("links.deleteOne", this.props._id);
+          }}
+        >
+          Delete
         </button>
       </div>
     );

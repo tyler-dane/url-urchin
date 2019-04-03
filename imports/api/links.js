@@ -79,5 +79,11 @@ Meteor.methods({
         }
       }
     );
+  },
+  "links.deleteOne"(_id) {
+    Links.remove({ _id })
+  },
+  "links.deleteAll"() {
+    Links.remove({})
   }
 });
