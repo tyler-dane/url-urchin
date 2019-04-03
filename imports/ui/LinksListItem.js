@@ -88,7 +88,6 @@ export default class LinksListItem extends React.Component {
           className="button button--pill"
           title="Remove URL from list"
           onClick={() => {
-            console.log("deleting url");
             Meteor.call("links.deleteOne", this.props._id);
           }}
         >

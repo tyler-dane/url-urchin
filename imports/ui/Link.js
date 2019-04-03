@@ -10,9 +10,9 @@ export default () => {
     <div>
       <PrivateHeader title="Your Links" />
       <div className="page-content">
-        <LinksListFilters />
         <AddLink />
         <DeleteAll />
+        <LinksListFilters />
         <LinksList />
       </div>
     </div>
